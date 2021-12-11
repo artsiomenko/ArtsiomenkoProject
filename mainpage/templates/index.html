@@ -169,8 +169,9 @@
                     </div>
                   </div>
                   <div class="row">
-                    {% for newsItem in news %}
+
                     <div class="col-lg-8">
+                        {% for newsItem in news %}
                       <div class="row">
                         <div class="col-sm-4 grid-margin">
                           <div class="rotate-img">
@@ -183,126 +184,21 @@
                         </div>
                         <div class="col-sm-8 grid-margin">
                           <h2 class="font-weight-600 mb-2">
-                            No charges over 2017 battle bus cases
+                            {{ newsItem.NewsTitle }}
                           </h2>
                           <p class="fs-13 text-muted mb-0">
                             <span class="mr-2">Photo </span>10 Minutes ago
                           </p>
                           <p class="fs-15">
-                              {{ newsItem.description }}
+                              {{ newsItem.NewsContent }}
                           </p>
                         </div>
                       </div>
-                      <div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src=".././static/assets/images/business/business_8.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            No charges over 2017 battle bus cases
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            {{ newsItem.description }}
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src=".././static/assets/images/business/business_9.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            Kaine: Trump Jr. may have committed treason
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            {{ newsItem.description }}
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src=".././static/assets/images/business/business_10.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            South Korea’s Moon Jae-in sworn in vowing to address
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            {{ newsItem.description }}
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src=".././static/assets/images/business/business_11.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            No charges over 2017 battle bus cases
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                           {{ newsItem.description }}
-                          </p>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col-sm-4 grid-margin">
-                          <div class="rotate-img">
-                            <img
-                              src=".././static/assets/images/business/business_12.png"
-                              alt="banner"
-                              class="img-fluid"
-                            />
-                          </div>
-                        </div>
-                        <div class="col-sm-8 grid-margin">
-                          <h2 class="font-weight-600 mb-2">
-                            Kaine: Trump Jr. may have committed treason
-                          </h2>
-                          <p class="fs-13 text-muted mb-0">
-                            <span class="mr-2">Photo </span>10 Minutes ago
-                          </p>
-                          <p class="fs-15">
-                            {{ newsItem.description }}
-                          </p>
-                        </div>
-                      </div>
+                        {% endfor %}
+
+
+
+
                     </div>
                     <div class="col-lg-4">
                       <h2 class="mb-4 text-primary font-weight-600">
@@ -434,7 +330,7 @@
                         </div>
                       </div>
                     </div>
-                    {% endfor %}
+
                   </div>
                 </div>
               </div>
