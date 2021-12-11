@@ -16,11 +16,12 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from mainpage.views import index
+from mainpage.views import edit
 
 from django.conf.urls import url, include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainpage/', index),
-    url(r'^', include('mainpage.urls'))
+    path('mainpage/<int:id>', edit)
 ]

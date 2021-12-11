@@ -12,6 +12,11 @@ def index(request):
     return render(request, 'index.html', {'news': news})
 
 
+def edit(request, id=0):
+    news = NewsModels.objects.get(NewsID=id)
+    return render(request, 'edit.html', {'news': news})
+
+
 @csrf_exempt
 def newsapi(request,id=0):
     if request.method=='GET':
