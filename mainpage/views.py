@@ -1,10 +1,10 @@
+import requests
+from django.http import JsonResponse
 from django.shortcuts import render
-from django.views.decorators.csrf import csrf_exempt
-from rest_framework.parsers import JSONParser
-from django.http.response import JsonResponse
+from geopy.geocoders import Nominatim
 
 from mainpage.models import NewsModels
-from mainpage.serializers import NewsSerializer
+from django.utils.encoding import smart_str
 
 
 def index(request):
@@ -17,28 +17,33 @@ def view_news(request, id=0):
     return render(request, 'view_news.html', {'news': news})
 
 
-@csrf_exempt
-def newsapi(request,id=0):
-    if request.method=='GET':
-        news = NewsModels.objects.all()
-        news_serializer = NewsSerializer(news, many=True)
-        return JsonResponse(news_serializer.data, safe=False)
-    elif request.method=='POST':
-        news_data = JSONParser().parse(request)
-        news_serializer = NewsSerializer(data=news_data)
-        if news_serializer.is_valid():
-            news_serializer.save()
-            return JsonResponse('Added successfully', safe=False)
-        return JsonResponse('Failed to Add', safe=False)
-    elif request.method=='PUT':
-        news_data = JSONParser().parse(request)
-        news = NewsModels.objects.get(NewsID=news_data['NewsID'])
-        news_serializer = NewsSerializer(news, data=news_data)
-        if news_serializer.is_valid():
-            news_serializer.save()
-            return JsonResponse('Update successfully', safe=False)
-        return JsonResponse('Failed to Update', safe=False)
-    elif request.method=='DELETE':
-        news = NewsModels.objects.get(NewsID=id)
-        news.delete()
-        return JsonResponse('Delete successfully', safe=False)
+def yandex_weather(request):
+    lat = request.GET.get('lat')
+    lon = request.GET.get('lon')
+    response = requests.get(
+        'https://api.weather.yandex.ru/v2/forecast',
+        params={
+            'lat': lat,
+            'lon': lon,
+            'lang': 'ru-RU'
+        },
+        headers={'X-Yandex-API-Key': '7d65403d-ff87-4c14-a701-aee578d4fe2c'},
+    )
+    json_response = response.json()
+    city = get_city(lat, lon)
+    return JsonResponse(
+        {
+            'current-temp': json_response.get('fact').get('temp'),
+            'city': city
+        },
+        safe=False,
+        json_dumps_params={'ensure_ascii': False}
+    )
+
+
+def get_city(lat, lon):
+    geolocator = Nominatim(user_agent="geoapiExercises")
+    location = geolocator.reverse(lat + "," + lon)
+    address = location.raw['address']
+    city = address.get('city', '')
+    return city

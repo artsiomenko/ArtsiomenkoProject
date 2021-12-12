@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path
 from mainpage.views import index
 from mainpage.views import view_news
+from mainpage.views import yandex_weather
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -24,7 +25,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('mainpage/', index),
-    path('mainpage/<int:id>', view_news)
+    path('mainpage/<int:id>', view_news),
+    path('api/weather/', yandex_weather)
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,
