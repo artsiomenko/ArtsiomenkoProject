@@ -33,7 +33,7 @@ def yandex_weather(request):
     city = get_city(lat, lon)
     return JsonResponse(
         {
-            'current-temp': json_response.get('fact').get('temp'),
+            'temp': json_response.get('fact').get('temp'),
             'city': city
         },
         safe=False,
