@@ -12,9 +12,9 @@ def index(request):
     return render(request, 'index.html', {'news': news})
 
 
-def edit(request, id=0):
+def view_news(request, id=0):
     news = NewsModels.objects.get(NewsID=id)
-    return render(request, 'edit.html', {'news': news})
+    return render(request, 'view_news.html', {'news': news})
 
 
 @csrf_exempt
