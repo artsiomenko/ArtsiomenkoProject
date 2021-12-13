@@ -7,6 +7,7 @@ class NewsModels(models.Model):
     NewsTitle = models.CharField(max_length=100)
     NewsContent = models.CharField(max_length=5000)
     NewsPhoto = models.ImageField(upload_to='images/news/', null=True, blank=True)
+    NewsContentShort = models.CharField(max_length=200, null=True)
 
     class Meta:
         verbose_name_plural = 'Новости'
