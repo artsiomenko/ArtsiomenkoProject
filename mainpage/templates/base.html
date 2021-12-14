@@ -129,7 +129,7 @@
                             <div class="row">
                                 <div class="col-sm-12">
                                     <h1 class="font-weight-600 mb-4">
-                                         {% block title %}{% endblock %}
+                                        {% block title %}{% endblock %}
                                     </h1>
                                 </div>
                             </div>
@@ -143,81 +143,8 @@
                                     <h2 class="mb-4 text-primary font-weight-600">
                                         Объявления
                                     </h2>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="border-bottom pb-4 pt-4">
-                                                <div class="row">
-                                                    <div class="col-sm-8">
-                                                        <h5 class="font-weight-600 mb-1">
-                                                            Ways to stay social online while in self..
-                                                        </h5>
-                                                        <p class="fs-13 text-muted mb-0">
-                                                            <span class="mr-2">Photo </span>10 Minutes ago
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="rotate-img">
-                                                            <img
-                                                                    src=".././static/assets/images/business/business_1.png"
-                                                                    alt="banner"
-                                                                    class="img-fluid"
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="border-bottom pb-4 pt-4">
-                                                <div class="row">
-                                                    <div class="col-sm-8">
-                                                        <h5 class="font-weight-600 mb-1">
-                                                            Premier League players join charity..
-                                                        </h5>
-                                                        <p class="fs-13 text-muted mb-0">
-                                                            <span class="mr-2">Photo </span>10 Minutes ago
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="rotate-img">
-                                                            <img
-                                                                    src=".././static/assets/images/business/business_2.png"
-                                                                    alt="banner"
-                                                                    class="img-fluid"
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <div class="pt-4">
-                                                <div class="row">
-                                                    <div class="col-sm-8">
-                                                        <h5 class="font-weight-600 mb-1">
-                                                            UK Athletics board changed stance on..
-                                                        </h5>
-                                                        <p class="fs-13 text-muted mb-0">
-                                                            <span class="mr-2">Photo </span>10 Minutes ago
-                                                        </p>
-                                                    </div>
-                                                    <div class="col-sm-4">
-                                                        <div class="rotate-img">
-                                                            <img
-                                                                    src=".././static/assets/images/business/business_3.png"
-                                                                    alt="banner"
-                                                                    class="img-fluid"
-                                                            />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
+                                    {% load render_partial %}
+                                    {% render_partial 'ads' %}
                                     <div class="trending">
                                         <h2 class="mb-4 text-primary font-weight-600">
                                             Вопрос/ответ. Новое в законодательстве

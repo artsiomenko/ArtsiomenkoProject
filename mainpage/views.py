@@ -4,6 +4,7 @@ from django.shortcuts import render
 from geopy.geocoders import Nominatim
 
 from mainpage.models import NewsModels
+from mainpage.models import AdModels
 from django.utils.encoding import smart_str
 
 
@@ -15,6 +16,12 @@ def index(request):
 def view_news(request, id=0):
     news = NewsModels.objects.get(NewsID=id)
     return render(request, 'view_news.html', {'news': news})
+
+
+def ads(request):
+    print('alloha')
+    ads_data = AdModels.objects.all()
+    return render(request, 'ads.html', {'ads': ads_data})
 
 
 def yandex_weather(request):
