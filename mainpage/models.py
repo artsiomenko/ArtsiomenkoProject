@@ -25,3 +25,15 @@ class AdModels(models.Model):
     class Meta:
         verbose_name_plural = 'Объявления'
         verbose_name = 'Объявление'
+
+
+class LawsModels(models.Model):
+    LawID = models.AutoField(primary_key=True)
+    LawDate = models.DateTimeField(auto_now_add=True)
+    LawTitle = models.CharField(max_length=100)
+    LawFile = models.FileField(upload_to='laws/', null=True, blank=True)
+
+
+    class Meta:
+        verbose_name_plural = 'Нормативные документы'
+        verbose_name = 'Нормативный документ'

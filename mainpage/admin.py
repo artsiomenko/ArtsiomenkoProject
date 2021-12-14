@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import NewsModels, AdModels
+from .models import NewsModels, AdModels, LawsModels
 
 
 class NewsAdmin(admin.ModelAdmin):
@@ -18,4 +18,13 @@ class AdAdmin(admin.ModelAdmin):
 
 
 admin.site.register(AdModels, AdAdmin)
+
+
+class LawsAdmin(admin.ModelAdmin):
+    list_display = ('LawID', 'LawDate', 'LawTitle')
+    list_display_links = ('LawID', 'LawDate', 'LawTitle')
+    search_fields = ('LawDate', 'LawTitle')
+
+
+admin.site.register(LawsModels, LawsAdmin)
 

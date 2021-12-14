@@ -5,6 +5,7 @@ from geopy.geocoders import Nominatim
 
 from mainpage.models import NewsModels
 from mainpage.models import AdModels
+from mainpage.models import LawsModels
 from django.utils.encoding import smart_str
 
 
@@ -19,9 +20,13 @@ def view_news(request, id=0):
 
 
 def ads(request):
-    print('alloha')
     ads_data = AdModels.objects.all()
     return render(request, 'ads.html', {'ads': ads_data})
+
+
+def laws(request):
+    laws_data = LawsModels.objects.all()
+    return render(request, 'laws.html', {'laws': laws_data})
 
 
 def yandex_weather(request):

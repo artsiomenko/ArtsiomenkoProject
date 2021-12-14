@@ -1,0 +1,14 @@
+{% for lawsItem in laws %}
+    <div class="mb-4">
+
+        <h5 class="font-weight-600 mb-1"  >
+            <a style="color:#3a3a3a"
+                    href="/media/laws/{{ lawsItem.LawFile }}"
+                    target="_blankbanner"
+
+            >{{ lawsItem.LawTitle }}</a>
+        </h5>
+    </div>
+
+
+{% endfor %}
