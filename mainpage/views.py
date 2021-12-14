@@ -29,6 +29,10 @@ def laws(request):
     return render(request, 'laws.html', {'laws': laws_data})
 
 
+def about(request):
+    return render(request, 'about.html')
+
+
 def yandex_weather(request):
     lat = request.GET.get('lat')
     lon = request.GET.get('lon')
