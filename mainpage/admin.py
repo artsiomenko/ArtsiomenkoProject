@@ -16,5 +16,6 @@ class AdAdmin(admin.ModelAdmin):
     list_display_links = ('AdID', 'AdDate', 'AdTitle')
     search_fields = ('AdDate', 'AdTitle')
 
+
 admin.site.register(AdModels, AdAdmin)
 

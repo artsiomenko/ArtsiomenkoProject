@@ -24,6 +24,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('', index),
     path('mainpage/', index),
     path('mainpage/<int:id>', view_news),
     path('api/weather/', yandex_weather)
