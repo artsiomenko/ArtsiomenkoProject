@@ -12,7 +12,6 @@ class NewsModels(models.Model):
     class Meta:
         verbose_name_plural = 'Новости'
         verbose_name = 'Новость'
-        ordering = ['-NewsID']
 
 
 class AdModels(models.Model):
@@ -26,4 +25,3 @@ class AdModels(models.Model):
     class Meta:
         verbose_name_plural = 'Объявления'
         verbose_name = 'Объявление'
-        ordering = ['-AdID']
