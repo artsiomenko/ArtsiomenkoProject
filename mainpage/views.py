@@ -37,6 +37,10 @@ def information(request):
     return render(request, 'information.html')
 
 
+def contact(request):
+    return render(request, 'contact.html')
+
+
 def yandex_weather(request):
     lat = request.GET.get('lat')
     lon = request.GET.get('lon')
