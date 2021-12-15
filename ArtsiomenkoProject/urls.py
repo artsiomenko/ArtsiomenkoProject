@@ -21,6 +21,7 @@ from mainpage.views import yandex_weather
 from mainpage.views import ads
 from mainpage.views import laws
 from mainpage.views import about
+from mainpage.views import information
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -32,7 +33,8 @@ urlpatterns = [
     path('laws/', laws, name='laws'),
     path('news/<int:id>', view_news),
     path('api/weather/', yandex_weather),
-    path('about/', about)
+    path('about/', about),
+    path('information/', information)
 ]
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL,

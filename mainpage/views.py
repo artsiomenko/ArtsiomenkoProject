@@ -33,6 +33,10 @@ def about(request):
     return render(request, 'about.html')
 
 
+def information(request):
+    return render(request, 'information.html')
+
+
 def yandex_weather(request):
     lat = request.GET.get('lat')
     lon = request.GET.get('lon')
